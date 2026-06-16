@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.env
+*.log
+*.pid
+store/
+workspace/
+.cache/
+*.tmp
+*.bak

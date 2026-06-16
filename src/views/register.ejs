@@ -1,0 +1,11 @@
+<%- /* */ %>
+<div class="card" style="max-width:400px;margin:auto">
+  <h2>Register</h2>
+  <% if (typeof error !== 'undefined' && error) { %><p class="error"><%= error %></p><% } %>
+  <form method="POST">
+    <div><input type="email" name="email" placeholder="Email" required style="width:100%;padding:0.5rem;margin-bottom:0.5rem"></div>
+    <div><input type="password" name="password" placeholder="Password" required style="width:100%;padding:0.5rem;margin-bottom:0.5rem"></div>
+    <button class="btn" type="submit">Register</button>
+  </form>
+  <p style="margin-top:1rem"><a href="/login">Already have account?</a></p>
+</div>

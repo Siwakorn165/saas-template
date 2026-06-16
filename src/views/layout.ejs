@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title || 'SaaS Template' %></title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; color: #333; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+    nav { background: #007bff; color: white; padding: 1rem; margin-bottom: 2rem; }
+    nav a { color: white; margin-right: 1rem; text-decoration: none; }
+    .card { background: white; border-radius: 8px; padding: 2rem; margin-bottom: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .btn { display: inline-block; padding: 0.5rem 1rem; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; }
+    .btn:hover { background: #0056b3; }
+    .error { color: #dc3545; margin-bottom: 1rem; }
+    .success { color: #28a745; margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/payment/plans">Plans</a>
+    <a href="/dashboard/settings">Settings</a>
+    <form action="/logout" method="POST" style="display:inline"><button class="btn" style="background:#dc3545">Logout</button></form>
+  </nav>
+  <div class="container"><%- body %></div>
+</body>
+</html>

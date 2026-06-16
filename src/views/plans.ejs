@@ -1,0 +1,25 @@
+<%- include('layout', { title: 'Pricing Plans' }) %>
+<h2>Choose Your Plan</h2>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem">
+<% plans.forEach(plan => { %>
+  <div class="card" style="text-align:center">
+    <h3><%= plan.name %></h3>
+    <p style="font-size:2rem;font-weight:bold">$<%= plan.price %>/mo</p>
+    <ul style="list-style:none;margin:1rem 0">
+      <% plan.features.forEach(f => { %>
+        <li>✓ <%= f %></li>
+      <% }) %>
+    </ul>
+    <button class="btn" onclick="selectPlan('<%= plan.id %>')">Select</button>
+  </div>
+<% }) %>
+</div>
+<script>
+function selectPlan(plan) {
+  fetch('/payment/checkout', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({plan})
+  }).then(r => r.json()).then(data => alert(data.message))
+}
+</script>
